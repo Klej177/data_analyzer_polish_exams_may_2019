@@ -21,7 +21,7 @@ Application should help you with analyzing data from https://dane.gov.pl/dataset
 	Program will download data from API>gits server>disk.
 	Then create database in folder SQLite with data - so don't delete this folder even if empty.
 # Second start
-	Program is getting data from SQL database in folder SQLite.
+	Program is getting data from SQL database file.db.
 # Tests
 	There are files with pytest and unittests.
 # Requirements
