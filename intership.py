@@ -338,7 +338,6 @@ def data_program():
     our_data = TasksOnOurData('voivodeships')
     my_file = Path(r'file.db')
     if not my_file.is_file():
-        print("ASRAS")
         our_data.reading_file()
     our_data.printing_info()
     our_data.main_for_sql_data()

@@ -3,14 +3,13 @@ from intership import *
 class TestClass(object):
     def setup(self):
         self.our_data = TasksOnOurData('voivodeships')
-        my_file = Path(r'SQLite/file.db')
+        my_file = Path(r'file.db')
         if not my_file.is_file():
             self.our_data.reading_file()
-        #self.our_data.printing_info()
         self.our_data.main_for_sql_data()
         
     def test_data_file(self):
-        my_file = Path(r'SQLite/file.db')
+        my_file = Path(r'file.db')
         if not my_file.is_file():
             proper_len = 613
             assert len(self.our_data.data_in_file) == proper_len

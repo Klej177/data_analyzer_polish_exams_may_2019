@@ -6,15 +6,14 @@ from io import StringIO
 class OurDataTests(unittest.TestCase):
     def setUp(self):
         self.our_data = OurData('voivodeships')
-        my_file = Path(r'SQLite/file.db')
+        my_file = Path(r'file.db')
         if not my_file.is_file():
             self.our_data.reading_file()
-        #self.our_data.printing_info()
         self.our_data.main_for_sql_data()
         
     def test_data_file(self):
         '''Checks if data_file was fully loaded to variable'''
-        my_file = Path(r'SQLite/file.db')
+        my_file = Path(r'file.db')
         if not my_file.is_file():
             proper_len = 613
             self.assertEqual(len(self.our_data.data_in_file), proper_len, 'Wrong len of file')
@@ -49,7 +48,10 @@ class OurDataTests(unittest.TestCase):
 class TasksOnOurDataTests(unittest.TestCase):
     def setUp(self):
         self.our_data = TasksOnOurData('voivodeships')
-        self.our_data.reading_file_from_disk()
+        my_file = Path(r'file.db')
+        if not my_file.is_file():
+            self.our_data.reading_file()
+        self.our_data.main_for_sql_data()
 
     def run_test_average_participation(self, given_answer, expected_out):
         with patch('builtins.input', return_value=given_answer), patch('sys.stdout', new=StringIO()) as fake_out:
