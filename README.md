@@ -18,7 +18,7 @@ Application should help you with analyzing data from https://dane.gov.pl/dataset
 	Input to provide data should look like this: Pomorskie 2015 F or Pomorskie 2010
 
 # First start
-	Program will download data with API>gits server>disk
+	Program will download data from API>gits server>disk
 	Then create database in folder SQLite with data - so don't delete this folder even if empty.
 # Second start
 	Program is getting data from SQL database in in folder SQLite.
