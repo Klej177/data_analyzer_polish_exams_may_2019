@@ -19,7 +19,7 @@ Application should help you with analyzing data from https://dane.gov.pl/dataset
 
 # First start
 	Program will download data from API>gits server>disk.
-	Then create database in folder SQLite with data - so don't delete this folder even if empty.
+	Then create database.
 # Second start
 	Program is getting data from SQL database file.db.
 # Tests
