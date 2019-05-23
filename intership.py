@@ -129,7 +129,7 @@ class OurData():
                 
     def create_connection(self):
         '''Function to create connection with our data base in SQL'''
-        self.db_file = r'SQLite/file.db'
+        self.db_file = 'file.db'
         try:
             self.conn = sqlite3.connect(self.db_file)
         except Error as e:
@@ -202,7 +202,7 @@ class OurData():
 
     def main_for_sql_data(self):
         '''Main function for SQL stuff'''
-        my_file = Path(r'SQLite/file.db')
+        my_file = Path(r'file.db')
         if not my_file.is_file():
             self.main_creating_table()
             self.main_inserting_data()
@@ -321,7 +321,7 @@ class TasksOnOurData(OurData): #Two class so it cannot regress
     def printing_info(self):
         '''Function to print info about how program works and user's choices'''
         self.info = f"""Tasks to choose:
-1: {self.average_participation.__doc__}.
+1: {self.average_participation.__doc__}
 2: {self.procentage_pass_rate.__doc__}
 3: {self.best_voivodeship_in_year.__doc__}
 4: {self.looking_for_regress.__doc__}
@@ -336,8 +336,9 @@ class TasksOnOurData(OurData): #Two class so it cannot regress
     
 def data_program():
     our_data = TasksOnOurData('voivodeships')
-    my_file = Path(r'SQLite/file.db')
+    my_file = Path(r'file.db')
     if not my_file.is_file():
+        print("ASRAS")
         our_data.reading_file()
     our_data.printing_info()
     our_data.main_for_sql_data()
